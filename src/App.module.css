@@ -1,0 +1,19 @@
+.pauseButton {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.score {
+  position: fixed;
+  z-index: 998;
+  font-size: 24px;
+  font-weight: 700;
+  top: 0;
+  left: 0;
+}

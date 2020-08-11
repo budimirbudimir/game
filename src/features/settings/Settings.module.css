@@ -1,0 +1,28 @@
+.settings {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #fff;
+  z-index: 998;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontalSplit {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+
+.verticalSplit {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
