@@ -3,7 +3,7 @@ import { useFrame } from 'react-three-fiber'
 import { useSpring } from "react-spring/three";
 // import { a } from "react-spring/three";
 
-interface ComingProps {
+export interface ComingProps {
   children: any
   size?: number
 }
@@ -16,7 +16,7 @@ export const Coming = ({ size = 1, ...props }: ComingProps) => {
   const { position } = useSpring({ position: clicked ? size : -size });
   // get the half size to position it on top
   const halfSize = size / 2;
-  const toggle = () => set((i: boolean) => !i);
+  // const toggle = () => set((i: boolean) => !i);
 
   // useFrame(() => {
   //   if (group && group.current && group.current.position) group.current.position.z += 0.01
@@ -26,7 +26,7 @@ export const Coming = ({ size = 1, ...props }: ComingProps) => {
     <group
       {...props}
       ref={group}
-      onPointerDown={toggle}
+      // onPointerDown={toggle}
       // position={position.interpolate((s: number) => [0, s, halfSize])}
     >
       {props.children}

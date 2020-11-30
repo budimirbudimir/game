@@ -10,10 +10,14 @@ interface BirdProps {
   position: [number, number, number]
 }
 
+interface GLTFProps {
+  scene: any
+}
+
 // https://github.com/react-spring/gltfjsx
 export const Bird = ({ speed, factor, ...props }: BirdProps) => {
   const mesh = useRef();
-  const gltf = useLoader(GLTFLoader, './Parrot.glb', draco());
+  const gltf: GLTFProps = useLoader(GLTFLoader, './Parrot.glb', draco());
   // const mixer = useMemo(() => new THREE.AnimationMixer(), [])
   // useEffect(
   //   () => void mixer.clipAction(gltf.animations[0], group.current).play(),
@@ -24,7 +28,6 @@ export const Bird = ({ speed, factor, ...props }: BirdProps) => {
   // });
 
   return (
-    
     <primitive
       {...props}
       ref={mesh}

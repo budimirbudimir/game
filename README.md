@@ -16,3 +16,11 @@ This is essentially my first attempt to build a 3D WebGL game, or any game in ge
 - `primereact` - PrimeReact, core component library
 - `primeicons` - PrimeReact, icons library
 - `primeflex` - PrimeFlex, grid library
+
+## Todo
+
+- [ ] Add basic collision logic
+- [ ] Game over
+- [ ] Add clock
+- [ ] 
+- [ ] Settings

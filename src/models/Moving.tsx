@@ -4,7 +4,7 @@ import { a } from "react-spring/three";
 
 import { PlayerProps } from '../features/experience/experienceSlice'
 
-interface MovingProps {
+export interface MovingProps {
   children: any
   size?: number
   handleUpdatePlayer: (player: PlayerProps) => void
@@ -39,3 +39,5 @@ export const Moving = ({ size = 1, ...props }: MovingProps) => {
     </a.group>
   );
 }
+
+export default Moving

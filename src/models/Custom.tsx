@@ -4,12 +4,17 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { draco } from "drei"
 import * as THREE from 'three'
 
-interface CustomProps {
+export interface CustomProps {
   position: [number, number, number]
   rotation?: [number, number, number]
   paused: boolean
   url: string
   // id: string
+}
+
+interface GLTFProps {
+  scene: any
+  animations: any[]
 }
 
 export const Custom = (props: CustomProps) => {
@@ -25,7 +30,7 @@ export const Custom = (props: CustomProps) => {
   // TODO Replace with local storage
   // const [animationsPlaying, setAnimationsPlaying] = useState(true)
 
-  const gltf = useLoader(GLTFLoader, props.url, draco())
+  const gltf: GLTFProps = useLoader(GLTFLoader, props.url, draco())
 
   /**
    * @function setAnimationsPlayingFlag
@@ -113,6 +118,7 @@ export const Custom = (props: CustomProps) => {
       stopAnimations(newMixers as any, true)
       window.dispatchEvent(new Event('geenee-arscene-arshape-removed'))
     }
+  // eslint-disable-next-line
   }, [gltf.animations])
 
   // Rotate mesh every frame, this is outside of React without overhead
@@ -136,3 +142,5 @@ export const Custom = (props: CustomProps) => {
     </group>
   )
 }
+
+export default Custom

@@ -5,7 +5,7 @@ import { setPaused, getPaused } from '../experience/experienceSlice'
 import { Stats } from '../../components/Stats'
 import { Actions } from '../../components/Actions'
 
-import logo from '../../logo.svg';
+// import logo from '../../logo.svg';
 import styles from './Settings.module.css'
 
 interface StatsProps {

@@ -4,7 +4,7 @@ import { useFrame } from 'react-three-fiber'
 
 // import { addPoints } from '../features/experience/experienceSlice'
 
-interface BoxProps {
+export interface BoxProps {
   position: [number, number, number]
   paused: boolean
   handleAddPoints: (p: number) => void
@@ -19,12 +19,13 @@ export const Box = (props: BoxProps) => {
 
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false)
-  const [visible, setVisible] = useState(true)
+  // const [visible, setVisible] = useState(true)
 
   // Rotate mesh every frame, this is outside of React without overhead
   useFrame(() => {
     // If object surpassed movement boundaries, destroy it and add points
-    if (mesh.current.position.z > -5 && visible) {
+    // if (mesh.current.position.z > -5 && visible) {
+    if (mesh.current.position.z > -5) {
       console.log('surpassed movement boundaries', mesh.current.position.z)
 
       // later on, add collision calculations
@@ -37,7 +38,7 @@ export const Box = (props: BoxProps) => {
     }
 
     // Apply translation if experience isn't paused
-    if (!props.paused && mesh.current.position.z < -5 && visible) {
+    if (!props.paused && mesh.current.position.z < -5) {
       mesh.current.rotation.x = mesh.current.rotation.y += 0.01
       mesh.current.position.z = mesh.current.position.z += 0.1
       console.log('updating')
@@ -49,7 +50,7 @@ export const Box = (props: BoxProps) => {
       {...props}
       ref={mesh}
       scale={[1, 1, 1]}
-      visible={visible}
+      // visible={visible}
       // scale={active ? [1, 1, 1] : [.5, .5, .5]}
       // onClick={(e) => setActive(!active)}
       onPointerOver={(e) => setHover(true)}
@@ -59,3 +60,5 @@ export const Box = (props: BoxProps) => {
     </mesh>
   )
 }
+
+export default Box
