@@ -3,8 +3,8 @@ import { useThree, useFrame, extend } from "react-three-fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 // Controls
-export const CONTROLS_DAMPING_FACTOR = 0.1
-export const CONTROLS_ROTATE_SPEED = 0.5
+export const CONTROLS_DAMPING_FACTOR = 0.1;
+export const CONTROLS_ROTATE_SPEED = 0.5;
 
 extend({ OrbitControls });
 

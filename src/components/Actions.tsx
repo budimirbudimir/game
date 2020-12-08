@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { Button } from 'primereact/button'
-import { Dialog } from 'primereact/dialog'
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Button } from "primereact/button";
+import { Dialog } from "primereact/dialog";
 
-import { setSplashVisible } from '../features/settings/settingsSlice'
-import { setPaused, setPoints } from '../features/experience/experienceSlice'
+import { setSplashVisible } from "../features/settings/settingsSlice";
+import { setPaused, setPoints } from "../features/experience/experienceSlice";
 
-import styles from './Actions.module.css'
+import styles from "./Actions.module.css";
 
 interface ActionsProps {
-  continue: () => void
+  continue: () => void;
 }
 
 export const Actions = (props: ActionsProps) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const [dialogVisible, setDialogVisible] = useState(false)
+  const [dialogVisible, setDialogVisible] = useState(false);
 
   return (
     <div className={styles.buttonContainer}>
@@ -37,7 +37,7 @@ export const Actions = (props: ActionsProps) => {
             <Button
               label="Save"
               className="p-button-secondary"
-              onClick={() => alert('saving game')}
+              onClick={() => alert("saving game")}
             />
           </div>
         </div>
@@ -47,7 +47,7 @@ export const Actions = (props: ActionsProps) => {
             <Button
               label="Preferences"
               className="p-button-secondary"
-              onClick={() => alert('opening preferences')}
+              onClick={() => alert("opening preferences")}
             />
           </div>
         </div>
@@ -72,20 +72,19 @@ export const Actions = (props: ActionsProps) => {
             </div>
           }
           visible={dialogVisible}
-          style={{ width: '50vw' }}
+          style={{ width: "50vw" }}
           modal={true}
           onHide={() => {
-            setDialogVisible(false)
-            dispatch(setSplashVisible(true))
-            dispatch(setPaused(true))
-            dispatch(setPoints(0))
+            setDialogVisible(false);
+            dispatch(setSplashVisible(true));
+            dispatch(setPaused(true));
+            dispatch(setPoints(0));
           }}
         >
-          Are you sure you want to quit the game? <br/>
+          Are you sure you want to quit the game? <br />
           You progress may be lost.
         </Dialog>
       </div>
     </div>
-  )
-}
-
+  );
+};
