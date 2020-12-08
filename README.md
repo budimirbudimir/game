@@ -19,8 +19,9 @@ This is essentially my first attempt to build a 3D WebGL game, or any game in ge
 
 ## Todo
 
+- [ ] Allow horizontal movement as well
+- [ ] Use keyboard for controlling movement
 - [ ] Add basic collision logic
 - [ ] Game over
 - [ ] Add clock
-- [ ] 
 - [ ] Settings
